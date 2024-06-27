@@ -23,8 +23,8 @@
         <h1>API Mails</h1>
 
         <!-- List to print mails -->
-        <ul v-if="emails.length === 100">
-            <li v-for="(email, index) in emails" :key="index">{{email}}</li>
+        <ul>
+            <li v-for="email in emails" :key="email">{{ email }}</li>
         </ul>
     </div>
     <!-- My Script -->
