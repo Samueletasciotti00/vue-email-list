@@ -9,22 +9,15 @@ const { createApp } = Vue
       }
     },
 
-    // Funzioni
-    methods: {
-        generaMail(){
-            
-            //Ciclo per mail
-            for (let i = 0; i < 100; i++) {
-                fetch('https://flynn.boolean.careers/exercises/api/random/mail')
-                  .then(response => response.json())
-                  .then(data => {
-                    this.emails.push(data.response + i);
-                  });
-              }
-        }
-    },
     mounted(){
-        this.generaMail();
+        for(let i = 0; i < 10; i++){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then(email => {
+                    const arrayMail = email.data.response;
+                    this.emails.email.push(arrayMail)
+                })
+        }
+            
     }
 
   }).mount('#app')
